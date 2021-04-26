@@ -1,11 +1,14 @@
 class SightingsController < ApplicationController
   def index
+    @sightings = Sighting.all
   end
 
   def new
+    @sighting = Sighting.new
   end
 
-  def create
+  def create 
+    
   end
 
   def show

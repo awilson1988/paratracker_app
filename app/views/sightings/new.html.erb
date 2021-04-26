@@ -1,2 +1,33 @@
 <h1>Sightings#new</h1>
 <p>Find me in app/views/sightings/new.html.erb</p>
+
+<form action="/sightings" method="post"> 
+    Date of Sighting: <input type="number" name="sighting[date]">  
+    Location: <input type="text" name="sighting[location]"> 
+    Cryptid: <input type="text" name="sighting[cryptid]"> 
+    Account: <input type="text" name="sighting[account]">
+    <input type="submit" value="Submit" > 
+</form>
+
+<h3>Form With</h3>
+<%= form_with model: @sighting do |s| %> 
+    
+<%= s.label :date %> 
+<%= s.datetime_field :date %>  
+
+<%= s.label :location %> 
+<%= s.text_field :location %> 
+
+<%= s.label :cyrptid %> 
+<%= s.text_field :cryptid %> 
+
+<%= s.label :account %> 
+<%= s.text_field :account %> 
+
+<%= s.submit %>
+
+
+
+<% end %>
+
+
