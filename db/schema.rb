@@ -22,11 +22,12 @@ ActiveRecord::Schema.define(version: 2021_04_24_225751) do
   create_table "sightings", force: :cascade do |t|
     t.datetime "date"
     t.string "location"
-    t.string "cryptid"
     t.text "account"
+    t.integer "cryptid_id"
     t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["cryptid_id"], name: "index_sightings_on_cryptid_id"
     t.index ["user_id"], name: "index_sightings_on_user_id"
   end
 
@@ -34,6 +35,7 @@ ActiveRecord::Schema.define(version: 2021_04_24_225751) do
     t.string "first_name"
     t.string "last_name"
     t.string "username"
+    t.string "email"
     t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
