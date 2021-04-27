@@ -1,2 +1,9 @@
 <h1>Sightings#show</h1>
 <p>Find me in app/views/sightings/show.html.erb</p>
+
+<% @sightings.each do |s| %> 
+    Date: <%= s.date %> 
+    Location: <%= s.location %> 
+    Account: <%= s.account %>
+
+<% end %>

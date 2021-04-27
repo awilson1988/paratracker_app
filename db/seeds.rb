@@ -39,4 +39,9 @@
     
 # ])
 
+# Sighting.create([
+#     {date: "4/26/21", location: "Henderson, NV", cryptid_id: "1", user_id: "1", 
+#     account: "He was hairy!"},
+# ])
+
 

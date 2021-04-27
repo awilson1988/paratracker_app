@@ -9,12 +9,11 @@ class SightingsController < ApplicationController
 
   def create 
     @sighting = Sighting.new(sighting_params)
-    byebug
-    # if @sighting.save 
-    #   redirect_to sighting_path(@sighting)
-    # else 
-    #   render :new
-    # end
+      if @sighting.save 
+        redirect_to sighting_path(@sighting)
+      else 
+        render :new
+      end
   end
 
   def show
@@ -32,7 +31,7 @@ class SightingsController < ApplicationController
   private 
 
   def sighting_params
-    params.require(:sighting).permit(:date, :location, :cryptid_id, :user_id, :account)
+    params.require(:sighting).permit(:date, :location, :user_id, :account)
   end
 end
 
