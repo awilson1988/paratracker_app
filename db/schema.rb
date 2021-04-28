@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_24_225751) do
+ActiveRecord::Schema.define(version: 2021_04_27_220454) do
 
   create_table "cryptids", force: :cascade do |t|
     t.string "name"
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 2021_04_24_225751) do
     t.string "location"
     t.text "account"
     t.integer "cryptid_id"
-    t.integer "user_id", null: false
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["cryptid_id"], name: "index_sightings_on_cryptid_id"

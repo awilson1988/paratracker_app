@@ -3,7 +3,10 @@ class UsersController < ApplicationController
   end
 
   def new
+    if !logged_in?
     @user = User.new
+    else 
+      redirect_to root_path
   end
 
   def create

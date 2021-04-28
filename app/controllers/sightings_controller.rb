@@ -8,7 +8,6 @@ class SightingsController < ApplicationController
   end
 
   def create 
-    binding.pry
     @sighting = Sighting.new(sighting_params)
       if @sighting.save 
         redirect_to @sighting

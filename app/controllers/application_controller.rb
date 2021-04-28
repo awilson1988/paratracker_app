@@ -1,9 +1,10 @@
-class ApplicationController < ActionController::Base
-
-    include ApplicationHelper
-
+class ApplicationController < ActionController::Base    
+    include ApplicationHelper 
+    
     def welcome 
-        if !logged_in? 
+        if !logged_in?
             redirect_to login_path
+        end
     end
 end
+
