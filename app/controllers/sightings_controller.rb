@@ -8,21 +8,25 @@ class SightingsController < ApplicationController
   end
 
   def create 
+    binding.pry
     @sighting = Sighting.new(sighting_params)
       if @sighting.save 
-        redirect_to sighting_path(@sighting)
+        redirect_to @sighting
       else 
         render :new
       end
   end
 
   def show
+    @sighting = Sighting.find_by_id(params[:id])
   end
 
   def edit
+    @sighting = Sighting.find_by_id(params[:id])
   end
 
   def update
+  
   end
 
   def destroy
@@ -31,7 +35,7 @@ class SightingsController < ApplicationController
   private 
 
   def sighting_params
-    params.require(:sighting).permit(:date, :location, :user_id, :account)
+    params.require(:sighting).permit(:date, :location, :account, :user_id, :cryptid_id)
   end
 end
 

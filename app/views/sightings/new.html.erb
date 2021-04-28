@@ -1,25 +1,9 @@
-<h1>Sightings#new</h1>
-<p>Find me in app/views/sightings/new.html.erb</p>
+<h1>Sightings</h1>
+
 
 <h1>Report a Sighting</h1>
-<%= form_with model: @sighting do |s| %> 
-    
-<%= s.label :date %> 
-<%= s.datetime_field :date %>  
-
-<%= s.label :location %> 
-<%= s.text_field :location %>
-
-<%= s.label :user_id %> 
-<%= s.number_field :user_id %>
-
-<%= s.label :account %> 
-<%= s.text_field :account %> 
-
-<%= s.submit %>
+<%= render 'form' %>
 
 
-
-<% end %>
 
 

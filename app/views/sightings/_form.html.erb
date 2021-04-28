@@ -1,0 +1,13 @@
+<%= form_with model: @sighting do |s| %> 
+
+    <%= s.label :date %> 
+    <%= s.datetime_field :date %>  
+    
+    <%= s.label :location %> 
+    <%= s.text_field :location %>
+  
+    <%= s.label :account %> 
+    <%= s.text_field :account %> 
+    <%= s.submit %>
+
+    <%end%>

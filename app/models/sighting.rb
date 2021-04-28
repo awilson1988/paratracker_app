@@ -1,4 +1,6 @@
 class Sighting < ApplicationRecord
-  belongs_to :user
-  belongs_to :cryptid 
+  belongs_to :user, optional: true
+  belongs_to :cryptid, optional: true
+
+
 end
