@@ -7,6 +7,7 @@ class UsersController < ApplicationController
     @user = User.new
     else 
       redirect_to root_path
+    end
   end
 
   def create
@@ -16,6 +17,7 @@ class UsersController < ApplicationController
     redirect_to root_path 
     else 
       render :new
+    end
   end
 
   def show
