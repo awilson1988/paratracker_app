@@ -1,8 +1,15 @@
 <h1>Sightings</h1>
 
-
+<% if @sightings.length == 0 %> 
+  No sightings to report 
+<% else %> 
 <% @sightings.each do |s| %> 
-   <h1> s.account </h1>
-<%end%>
+<p>
+   Date: <%= s.date %> 
+   Location: <%= s.location %>  
+   Account: <%= s.account %>
+</p>
+  <% end %>
+<% end %>
 
 

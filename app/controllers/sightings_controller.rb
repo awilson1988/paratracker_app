@@ -1,10 +1,10 @@
 class SightingsController < ApplicationController
-  def index
-    @sightings = Sighting.all
+  def index #path: sightings_path
+    @sightings = Sighting.all 
   end
 
-  def new
-    @sighting = Sighting.new
+  def new #path: new_sighting_path
+    @sighting = Sighting.new 
   end
 
   def create 
@@ -25,10 +25,14 @@ class SightingsController < ApplicationController
   end
 
   def update
-  
+    @sighting = Sighting.find_by_id(params[:id]) 
+    @sighting.update(sighting_params(:account))
   end
 
   def destroy
+    @sighting = Sighting.find_by_id(params[:id]) 
+    @sighting.destroy
+    redirect_to sightings_path
   end
 
   private 
