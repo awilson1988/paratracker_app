@@ -1,5 +1,6 @@
 class CryptidsController < ApplicationController
   def index
+    @cryptids = Cryptid.all
   end
 
   def new
