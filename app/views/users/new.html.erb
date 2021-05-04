@@ -1,5 +1,9 @@
 <h1>Create your Profile here!</h1>
 <%= form_with model: @user do |u| %> 
+<%= u.label :first_name %> 
+<%= u.text_field :first_name %> 
+<%= u.label :last_name %> 
+<%= u.text_field :last_name %> 
 <%= u.label :email %> 
 <%= u.text_field :email %> 
 <%= u.label :username %> 
