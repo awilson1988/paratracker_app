@@ -1,5 +1,4 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p> 
+<h2>Edit your Profile</h2>
 
 <%= form_for (@user) do |u| %> 
     <%= u.label :username %>
@@ -17,4 +16,4 @@
     <%= u.submit "Update Profile" %> 
     <% end %>
 
-<%= link_to('Delete', user_path(@user), method: 'delete') %>  
+<%= button_to('Delete your Account', user_path(@user), method: :delete) %>  
