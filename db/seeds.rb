@@ -8,9 +8,9 @@
 
 
 # User.create([ 
-#     {username: "truth_seeker88", first_name: "Ben", last_name: "Kissel", password: "test1"},
-#     {username: "i-believe", first_name: "Henry", last_name: "Z", password: "test2"},
-#     {username: "#1skeptic", first_name: "Marcus", last_name: "Parks", password: "test3"},
+#     {username: "truth_seeker88", first_name: "Ben", last_name: "Kissel", email: "123@123.com", password: "test1"},
+#     {username: "i-believe", first_name: "Henry", last_name: "Z", email: "456@456.com", password: "test2"},
+#     {username: "#1skeptic", first_name: "Marcus", last_name: "Parks", email: "789@789.com", password: "test3"},
 # ])
 
 # Cryptid.create([ 
