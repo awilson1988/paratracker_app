@@ -1,9 +1,9 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
-
-
-<h1>Sign up here!</h1>
-<%= form_with model: @user do |u| %>
+<h1>Create your Profile here!</h1>
+<%= form_with model: @user do |u| %> 
+<%= u.label :first_name %> 
+<%= u.text_field :first_name %>  
+<%= u.label :last_name %> 
+<%= u.text_field :last_name %> 
 <%= u.label :email %> 
 <%= u.text_field :email %> 
 <%= u.label :username %> 
@@ -13,5 +13,5 @@
 <%= u.submit 'Create Profile' %>
 <% end %>
 
-<h3>Or Login with Google:</h3> 
+<h3>Or Create a Profile using Google:</h3> 
 <%= button_to 'Google', '/auth/google_oauth2' %>
