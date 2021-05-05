@@ -1,2 +1,9 @@
-<h1>Cryptids#index</h1>
-<p>Find me in app/views/cryptids/index.html.erb</p>
+<h1>Cryptids</h1>
+
+
+<% @cryptids.each do |c| %> 
+    <p>
+       Name: <%= c.name %><br><br> 
+       Description: <%= c.description %>  
+    </p>
+<% end %>
