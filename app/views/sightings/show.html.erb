@@ -1,11 +1,11 @@
-<h1>Sightings#show</h1>
-<p>Find me in app/views/sightings/show.html.erb</p>
+<h1>Sighting</h1>
+Date: <%= @sighting.date %><br><br> 
+Location: <%= @sighting.location %><br><br>
+Cryptid: <%= @sighting.cryptid.name %><br><br>
+Witness Account: <%= @sighting.account %>
 
-<%= @sighting.date %> 
-<%= @sighting.location %>
-<%= @sighting.account %>
 
-<%= link_to('Delete', sighting_path(@sighting), method: 'delete') %>
+
     
 
   

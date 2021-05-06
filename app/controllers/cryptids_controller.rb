@@ -38,6 +38,6 @@ class CryptidsController < ApplicationController
   private
 
   def cryptid_params 
-    params.require(:cryptid).permit(:name, :description, :cryptid_id)
+    params.require(:cryptid).permit(:name, :description, :cryptid_id:[], cryptids)
   end
 end

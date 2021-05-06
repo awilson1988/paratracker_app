@@ -5,8 +5,9 @@
 <% else %> 
 <% @sightings.each do |s| %> 
 <p>
-   Date: <%= s.date %> 
-   Location: <%= s.location %>  
+   Date: <%= s.date %><br><br> 
+   Location: <%= s.location %><br><br> 
+   Cryptid: <%= s.cryptid.name %><br><br>  
    Account: <%= s.account %>
 </p>
   <% end %>
