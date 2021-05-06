@@ -1,12 +1,18 @@
+<div class="container">
+        <br>
+        <h5><%= link_to "All Sightings", "/sightings" %></h5>
+        <h5><%= link_to "Add a new Sighting", new_sighting_path %></h5>
+        <br>
+    </div>
 <h1>Hello Again, <%= @user.first_name %>!</h1><br> 
 
-<h2>My Sightings:</h2> 
 
 <%= button_to "Add a Sighting", new_sighting_path, method: :get %>
 
 <%= button_to "Edit Profile Info", edit_user_path, method: :get %>
 
 <%= button_to "Logout", logout_path %>
+
 
 
 

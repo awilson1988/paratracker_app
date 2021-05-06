@@ -7,12 +7,20 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    
-    
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    
-    <%= yield %>
+    <div>
+    <br>
+      <% if current_user %>
+        <%= link_to "Home", user_path(current_user) %>
+        <%= link_to "Account", user_path(current_user) %>
+        <%= link_to "Sightings", new_sighting_path %>
+        <%= button_to "Log Out", logout_path %>
+      <% end %>
+      <br><br><br>
+    </div>
+    <%= yield %> 
   </body>
 </html>
