@@ -1,6 +1,6 @@
 class CryptidsController < ApplicationController
   def index
-    @cryptids = Cryptid.all
+    @cryptids = Cryptid.cryps_sightings
   end
 
   def new
@@ -38,6 +38,6 @@ class CryptidsController < ApplicationController
   private
 
   def cryptid_params 
-    params.require(:cryptid).permit(:name, :description, :cryptid_id:[], cryptids)
+    #params.require(:cryptid).permit(:name, :description, :cryptid_id:(), :cryptids)
   end
 end

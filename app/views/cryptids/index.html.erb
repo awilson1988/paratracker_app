@@ -2,8 +2,10 @@
 
 
 <% @cryptids.each do |c| %> 
-    <p>
+    
        Name: <%= c.name %><br><br> 
-       Description: <%= c.description %>  
-    </p>
+    
+    <%= c.sightings.each do |sighting| %> 
+        <li><%= sighting.date %><%= sighting.location %></li>
+    <% end %>
 <% end %>

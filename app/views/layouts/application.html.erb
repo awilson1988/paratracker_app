@@ -7,16 +7,16 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
   </head>
 
   <body>
     <div>
     <br>
       <% if current_user %>
-        <%= link_to "Home", user_path(current_user) %>
-        <%= link_to "Account", user_path(current_user) %>
-        <%= link_to "Sightings", new_sighting_path %>
+
+        <%= link_to "Account Settings", edit_user_path(current_user) %> |
+        <%= link_to "Report a Sighting", new_sighting_path %><br>
         <%= button_to "Log Out", logout_path %>
       <% end %>
       <br><br><br>
