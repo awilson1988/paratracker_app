@@ -14,8 +14,10 @@
     <div>
     <br>
       <% if current_user %>
+        <%= link_to "Home", user_path(current_user) %>|
         <%= link_to "Account Settings", edit_user_path(current_user) %> |
-        <%= link_to "Report a Sighting", new_sighting_path %><br>
+        <%= link_to "Report a Sighting", new_sighting_path %>|
+        <%= link_to "Add a Cryptid", new_cryptid_path %>|
         <%= button_to "Log Out", logout_path %>
       <% end %>
       <br><br><br>

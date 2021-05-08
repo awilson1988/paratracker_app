@@ -1,19 +1,19 @@
 <h2>Edit your Profile</h2>
 
 <%= form_for (@user) do |u| %> 
-    <%= u.label :username %>
+    <%= u.label :username %><br>
     <%= u.text_field :username %><br>
     
-    <%= u.label :first_name %>
+    <%= u.label :first_name %><br>
     <%= u.text_field :first_name %><br>
     
-    <%= u.label :last_name %>
+    <%= u.label :last_name %><br>
     <%= u.text_field :last_name %><br>
     
-    <%= u.label :email %>
+    <%= u.label :email %><br>
     <%= u.text_field :email %><br>
     
-    <%= u.submit "Update Profile" %> 
+    <%= u.submit "Update Profile" %><br> 
     <% end %>
 
 <%= button_to('Delete your Account', user_path(@user), method: :delete) %>  
