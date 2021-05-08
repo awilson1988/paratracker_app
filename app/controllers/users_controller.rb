@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  include ApplicationHelper 
+
   def index
     @users = User.all
   end
@@ -17,7 +19,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id 
       redirect_to user_path(@user.id) 
     else 
-      render :new
+      render :new, notice: "Could not create new user."
     end
   end
 

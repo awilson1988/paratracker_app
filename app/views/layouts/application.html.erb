@@ -14,7 +14,6 @@
     <div>
     <br>
       <% if current_user %>
-
         <%= link_to "Account Settings", edit_user_path(current_user) %> |
         <%= link_to "Report a Sighting", new_sighting_path %><br>
         <%= button_to "Log Out", logout_path %>
