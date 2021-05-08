@@ -1,2 +1,16 @@
-<h1>Cryptids#new</h1>
-<p>Find me in app/views/cryptids/new.html.erb</p>
+<h2>Have you seen something unexplainable? Let us know about it</h2> 
+
+<%= form_with model: @cryptid do |c| %> 
+
+    <%= c.label :name %> 
+    <%= c.text_field :name %><br><br> 
+    
+    <%= c.label :description %> 
+    <%= c.text_field :description %><br><br> 
+
+    <%= c.submit %> 
+
+    <% end %>
+    
+
+     

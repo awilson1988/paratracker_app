@@ -9,8 +9,8 @@ class CryptidsController < ApplicationController
 
   def create
     @cryptid = Cryptid.new(cryptid_params)
-      if @sighting.save 
-        redirect_to @sighting
+      if @cryptid.save 
+        redirect_to @cryptid
       else 
         render :new
     end
@@ -38,6 +38,6 @@ class CryptidsController < ApplicationController
   private
 
   def cryptid_params 
-    #params.require(:cryptid).permit(:name, :description, :cryptid_id:(), :cryptids)
+    params.require(:cryptid).permit(:name, :description, :cryptid_id, :cryptids)
   end
 end
