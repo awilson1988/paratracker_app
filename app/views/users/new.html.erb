@@ -1,3 +1,4 @@
+<%= render partial: 'application/errors', locals: {object: @user} %>
 <h1>Create your Profile here!</h1>
 <%= form_with model: @user do |u| %> 
 <%= u.label :first_name %> 

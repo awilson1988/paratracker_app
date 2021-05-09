@@ -1,5 +1,10 @@
-<% flash.each do |type, msg| %>
-    <div>
-      <%= msg %>
+<% if object.errors.any? %>
+    <div class="errors">
+            <ul>
+                <li>There was a problem:</li>
+                <% object.errors.full_messages.each do |m| %>
+                    <li><%= m %></li>
+                <% end %>
+            </ul>
     </div>
-  <% end %>
+<% end %>
