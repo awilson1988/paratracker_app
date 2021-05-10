@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :cryptids
   resources :sightings
   resources :users do 
-    resources :sightings, shallow: true
+    resources :sightings, only: [:index, :new, :create, :show]
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
