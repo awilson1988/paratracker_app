@@ -9,6 +9,7 @@ class SightingsController < ApplicationController
 
   def create 
     @sighting = Sighting.new(sighting_params)
+    @sighting.user_id = session[:user_id]
       if @sighting.save 
         redirect_to @sighting
       else 

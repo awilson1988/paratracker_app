@@ -2,13 +2,16 @@
 <h1>Hello Again, <%= @user.first_name %>!</h1><br> 
 
 <h2>Your Sightings:</h2>
+<% current_user.sightings.each do |s| %>
+    <%= link_to s.date, sightings_path, method: :get %>
+<% end %><br><br>
 
 
-<%= button_to "Add a Sighting", new_sighting_path, method: :get %>
+
 
 <%= button_to "Edit Profile Info", edit_user_path, method: :get %>
 
-<%= button_to "Logout", logout_path %>
+
 
 
 

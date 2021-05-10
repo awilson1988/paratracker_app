@@ -7,7 +7,7 @@ class UsersController < ApplicationController
 
   def new
     if !logged_in?
-    @user = User.new
+      @user = User.new
     else 
       redirect_to root_path
     end
