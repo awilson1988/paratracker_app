@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   include ApplicationHelper 
+  before_action :find_user
 
   def index
     @users = User.all
@@ -28,13 +29,16 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find_by_id(params[:id])
+    redirect_if_not_logged_in
   end
 
   def update
-    @user = User.find_by_id(params[:id])
     @user.update(user_params)
-    redirect_to user_path(@user), notice: "Account Updated!"
+    if @user.valid?
+       redirect_to user_path(@user), notice: "Account Updated!"
+    else 
+      render :edit 
+    end
   end
 
   def destroy
@@ -47,6 +51,10 @@ class UsersController < ApplicationController
 
   def user_params  
     params.require(:user).permit(:first_name, :last_name, :email, :username, :password)
+  end
+
+  def find_user
+    @user = User.find_by_id(params[:id]) 
   end
 
   # def user_params(*args)

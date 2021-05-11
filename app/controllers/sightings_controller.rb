@@ -10,21 +10,21 @@ class SightingsController < ApplicationController
   end
 
   def new #path: new_sighting_path
-    @sighting = Sighting.new(sighting_params) 
+    @sighting = Sighting.new(params[:id]) 
   end
 
   def create 
     @sighting = Sighting.new(sighting_params)
     @sighting.user_id = session[:user_id]
       if @sighting.save 
-        redirect_to new_user_sighting_path
+        redirect_to sighting_path(:id)
       else 
         render :new
       end
   end
 
   def show
-    @sighting = Sighting.find_by_id(params[:id])
+    @sighting = Sighting.find_by_id(params[:sighting_id])
   end
 
   def edit

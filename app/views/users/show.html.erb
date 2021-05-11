@@ -1,14 +1,11 @@
 
 <h1>Hello Again, <%= @user.first_name %>!</h1><br> 
 
-<h2>Your Sightings:</h2>
-<% current_user.sightings.each do |s| %>
-    <%= link_to s.date, sighting_path, method: :get %><br>
-<% end %><br><br>
 
 
 
 
+<%= button_to "Your Sightings", user_sightings_path(@user), method: :get %>
 <%= button_to "Edit Profile Info", edit_user_path, method: :get %>
 
 
