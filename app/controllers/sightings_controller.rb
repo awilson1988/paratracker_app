@@ -6,7 +6,7 @@ class SightingsController < ApplicationController
       @user = User.find_by(params[:user_id])
       @sightings = @user.sightings 
     else
-    @sightings = Sighting.all 
+      @sightings = Sighting.all 
     end
   end
 
