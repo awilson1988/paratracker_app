@@ -1,4 +1,5 @@
 class SightingsController < ApplicationController
+  before_action :set_sighting, only: [:show, :edit, :update, :destroy]
   
   def index #path: sightings_path
     if params[:user_id] 
@@ -10,21 +11,21 @@ class SightingsController < ApplicationController
   end
 
   def new #path: new_sighting_path
-    @sighting = Sighting.new(params[:id]) 
+    @sighting = Sighting.new 
   end
 
   def create 
     @sighting = Sighting.new(sighting_params)
     @sighting.user_id = session[:user_id]
       if @sighting.save 
-        redirect_to sighting_path(:id)
+        redirect_to sighting_path(@sighting)
       else 
         render :new
       end
   end
 
   def show
-    @sighting = Sighting.find_by_id(params[:sighting_id])
+    @sighting = Sighting.find_by(params[:sighting_id])
   end
 
   def edit
@@ -43,6 +44,10 @@ class SightingsController < ApplicationController
   end
 
   private 
+
+  def set_sighting 
+    @sighting = Sighting.find_by(params[:id])
+  end
 
   def sighting_params
     params.require(:sighting).permit(:date, :location, :account, :user_id, :cryptid_id)
