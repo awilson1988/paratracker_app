@@ -25,7 +25,7 @@ class SightingsController < ApplicationController
   end
 
   def show
-    @sighting = Sighting.find_by(params[:id])
+    
   end
 
   def edit
@@ -34,8 +34,15 @@ class SightingsController < ApplicationController
 
   def update
     @sighting = Sighting.find_by_id(params[:id]) 
-    @sighting.update(sighting_params(:account))
+    @sighting.update(sighting_params)
+    if @sighting.valid?
+      redirect_to sighting_path(@sighting), notice: "Sighting Updated!"
+    else 
+      render :edit 
+    end
   end
+    # @sighting.update(sighting_params(:account))
+  
 
   def destroy
     @sighting = Sighting.find_by_id(params[:id]) 
@@ -46,7 +53,7 @@ class SightingsController < ApplicationController
   private 
 
   def set_sighting 
-    @sighting = Sighting.find_by(params[:id])
+    @sighting = Sighting.find_by_id(params[:id])
   end
 
   def sighting_params
