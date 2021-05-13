@@ -3,11 +3,13 @@
   <head>
     <title>ParatrackerApp</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+   
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     
+
   </head>
 
   <body>
@@ -15,8 +17,9 @@
     <br>
       <% if current_user %>
         <%= link_to "Home", user_path(current_user) %>|
-        <%= link_to "Report a Sighting", new_sighting_path %>|
-        <%= link_to "Add a Cryptid", new_cryptid_path %>|<br>
+        <%= link_to "Report a Sighting", new_user_sighting_path(current_user) %>|
+        <%= link_to "Add a Cryptid", new_cryptid_path %>|
+        <%= link_to "Cryptid's By Sighting", cryptids_path %>|
         <%= button_to "Log Out", logout_path %><br>
       <% end %>
       <br><br><br>

@@ -25,7 +25,7 @@ class SightingsController < ApplicationController
   end
 
   def show
-    @sighting = Sighting.find_by(params[:sighting_id])
+    @sighting = Sighting.find_by(params[:id])
   end
 
   def edit
