@@ -16,7 +16,7 @@
     <div>
     <br>
       <% if current_user %>
-        <%= link_to "Home", user_path(current_user) %>|
+        |<%= link_to "Home", user_path(current_user) %>|
         <%= link_to "Report a Sighting", new_user_sighting_path(current_user) %>|
         <%= link_to "Add a Cryptid", new_cryptid_path %>|
         <%= link_to "Cryptid's By Sighting", cryptids_path %>|
