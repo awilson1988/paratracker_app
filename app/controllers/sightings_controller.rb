@@ -15,11 +15,13 @@ class SightingsController < ApplicationController
   end
 
   def create 
+    redirect_if_not_logged_in
     @sighting = Sighting.new(sighting_params)
     @sighting.user_id = session[:user_id]
       if @sighting.save 
         redirect_to sighting_path(@sighting)
-      else 
+      else
+        
         render :new
       end
   end
@@ -29,7 +31,12 @@ class SightingsController < ApplicationController
   end
 
   def edit
-    @sighting = Sighting.find_by_id(params[:id])
+    redirect_if_not_logged_in
+    if @user == current_user
+    else 
+      redirect_to user_path(current_user)
+    end 
+  
   end
 
   def update

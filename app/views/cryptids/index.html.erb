@@ -4,8 +4,10 @@
 <% @cryptids.each do |c| %><br><br> 
     
        Name: <%= c.name %><br><br> 
-    
-    <% c.sightings.each do |sighting| %> 
-        <li><%= sighting.date %>_<%= sighting.location %></li>
+       
+     <% c.sightings.each do |sighting| %> 
+         <li><%= sighting.date %>_<%= sighting.location %></li> 
+     
+      
     <% end %>
 <% end %>

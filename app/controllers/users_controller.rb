@@ -19,8 +19,9 @@ class UsersController < ApplicationController
     if @user.save 
       session[:user_id] = @user.id 
       redirect_to user_path(@user.id) 
-    else 
-      render :new, notice: "Could not create new user."
+    else
+      flash.now[:notice] = "Could not create new user."
+      render :new 
     end
   end
 
@@ -30,6 +31,10 @@ class UsersController < ApplicationController
 
   def edit
     redirect_if_not_logged_in
+    if @user == current_user
+    else 
+      redirect_to user_path(current_user)
+    end 
   end
 
   def update
