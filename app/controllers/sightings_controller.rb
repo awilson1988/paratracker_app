@@ -1,9 +1,9 @@
 class SightingsController < ApplicationController
-  before_action :set_sighting, only: [:show, :edit, :update, :destroy]
+  before_action :set_sighting, only: [:new, :show, :edit, :update, :destroy]
   
   def index #path: sightings_path
-    if params[:user_id] 
-      @user = User.find_by(params[:user_id])
+    if params[:user_id] && @user = User.find_by(id: params[:user_id])
+      #@user = User.find_by(params[:user_id])
       @sightings = @user.sightings 
     else
       @sightings = Sighting.all 
@@ -11,7 +11,14 @@ class SightingsController < ApplicationController
   end
 
   def new #path: new_sighting_path
-    @sighting = Sighting.new 
+    @sighting = Sighting.new
+    # if params[:user_id]
+    #   @user = User.find_by(params[:user_id])
+    #   @sighting = @user.sighting.build
+    # else 
+    #   @sighting = Sighting.new
+    #   @sighting.build_user
+    # end  
   end
 
   def create 
@@ -19,11 +26,23 @@ class SightingsController < ApplicationController
     @sighting = Sighting.new(sighting_params)
     @sighting.user_id = session[:user_id]
       if @sighting.save 
-        redirect_to sighting_path(@sighting)
+        redirect_to user_sighting_path(@sighting.user_id)
       else
         
         render :new
       end
+    # if params[:user_id]
+    #   @user = User.find_by(params[:user_id])
+    #   @sighting = @user.sightings.build(sighting_params)
+    # else 
+    #   @sighting = Sighting.new(sighting_params)
+    # end 
+
+    # if @sighting.save 
+    #   redirect_to user_sighting_path(@user, @sighting)
+    # else 
+    #   render :new
+    # end 
   end
 
   def show

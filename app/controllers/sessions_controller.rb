@@ -27,7 +27,7 @@ end
       u.first_name = request.env['omniauth.auth'][:info][:first_name]
       u.last_name = request.env['omniauth.auth'][:info][:last_name]
       u.email = request.env['omniauth.auth'][:info][:email]
-      u.password = SecureRandom.hex(15)
+      u.password = SecureRandom.hex(5)
     end 
     if user.valid?
       session[:user_id] = user.id 

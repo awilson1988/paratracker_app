@@ -9,6 +9,7 @@ class CryptidsController < ApplicationController
 
   def create
     @cryptid = Cryptid.new(cryptid_params)
+    @cryptid.user_id = session[:user_id]
       if @cryptid.save 
         redirect_to @cryptid
       else 
@@ -17,7 +18,7 @@ class CryptidsController < ApplicationController
   end
 
   def show
-    @cryptid = Cryptid.find_by_id(params[:id])
+    @cryptid = Cryptid.find_by(params[:cryptid_id])
   end
 
   def edit
@@ -38,6 +39,6 @@ class CryptidsController < ApplicationController
   private
 
   def cryptid_params 
-    params.require(:cryptid).permit(:name, :description, :cryptid_id, :cryptids)
+    params.require(:cryptid).permit(:name, :description, :cryptid_id, :cryptids, :user_id)
   end
 end
