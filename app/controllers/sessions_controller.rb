@@ -26,6 +26,7 @@ end
     user = User.find_or_create_by(uid: request.env['omniauth.auth'][:uid], provider: request.env['omniauth.auth'][:provider]) do |u|
       u.first_name = request.env['omniauth.auth'][:info][:first_name]
       u.last_name = request.env['omniauth.auth'][:info][:last_name]
+      u.username = request.env['omniauth.auth']['info']['name'].downcase.gsub(" ", "_") 
       u.email = request.env['omniauth.auth'][:info][:email]
       u.password = SecureRandom.hex(5)
     end 

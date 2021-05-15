@@ -18,7 +18,7 @@ class CryptidsController < ApplicationController
   end
 
   def show
-    @cryptid = Cryptid.find_by(params[:cryptid_id])
+    @cryptid = Cryptid.find_by_id(params[:id])
   end
 
   def edit
@@ -27,7 +27,13 @@ class CryptidsController < ApplicationController
 
   def update
     @cryptid = Cryptid.find_by_id(params[:id]) 
-    @cryptid.update(crytid_params(:name, :description))
+    @cryptid.update(cryptid_params)
+    if @cryptid.valid?
+      redirect_to cryptid_path(@cryptid), notice: "Cryptid Updated!"
+    else 
+      render :edit 
+    end
+
   end
 
   def destroy

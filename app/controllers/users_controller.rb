@@ -41,7 +41,7 @@ class UsersController < ApplicationController
   def update
     @user.update(user_params)
     if @user.valid?
-       redirect_to user_path(@user), notice: "Account Updated!"
+       redirect_to user_path(@user), flash: { alert: "Sucessfully Updated!" }
     else 
       render :edit 
     end

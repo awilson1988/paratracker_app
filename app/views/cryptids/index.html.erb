@@ -6,7 +6,7 @@
        Name: <%= c.name %><br><br> 
        
      <% c.sightings.each do |sighting| %> 
-         <li><%= link_to(sighting.date, sighting_path(sighting), method: :get) %>_<%= sighting.location %></li> 
+         <li><%= link_to(sighting.date, sighting_path(sighting), method: :get) %> - <%= sighting.location %></li> 
      
       
     <% end %>

@@ -1,2 +1,16 @@
-<h1>Cryptids#edit</h1>
-<p>Find me in app/views/cryptids/edit.html.erb</p>
+
+
+<h1> Edit Cryptid</h1>
+
+
+<%= form_with model: @cryptid do |c| %> 
+
+    <%= c.label :name %> 
+    <%= c.text_field :name %><br><br> 
+    
+    <%= c.label :description %> 
+    <%= c.text_area :description %><br><br>
+  
+    
+    <%= c.submit %>
+    <%end%>

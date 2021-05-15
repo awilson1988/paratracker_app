@@ -1,7 +1,13 @@
 <h1>Cryptid info</h1>
 
 <%= @cryptid.name %><br><br> 
-<%= @cryptid.description %>
+<%= @cryptid.description %> 
+
+<% if current_user.present? %>
+    <%= button_to('Edit Cryptid', edit_cryptid_path(@cryptid), method: :get) %>  
+    <%= button_to('Delete this Cryptid', cryptid_path(@cryptid), method: :delete) %>  
+  <% end %>
+    
 
 
 

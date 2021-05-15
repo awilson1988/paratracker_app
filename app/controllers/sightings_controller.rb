@@ -63,7 +63,7 @@ class SightingsController < ApplicationController
     @sighting.update(sighting_params)
     if @sighting.valid?
       redirect_to sighting_path(@sighting), notice: "Sighting Updated!"
-    else 
+    else
       render :edit 
     end
   end

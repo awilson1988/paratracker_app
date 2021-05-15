@@ -5,7 +5,7 @@
 <h2>Your Cryptid's</h2>
 <% @user.cryptids.each do |c| %><br><br> 
     
-    # <%= link_to(c.name, cryptid_path, method: :get) %><br><br> 
+     <%= link_to(c.name, cryptid_path(c), method: :get) %><br><br> 
 <% end %>
 
 
