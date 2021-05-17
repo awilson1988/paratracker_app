@@ -12,7 +12,7 @@ end
         session[:user_id] = user.id 
         redirect_to user_path(user.id) 
     else 
-      flash[:message] = "Email and/or password invalid. Please try again."
+      flash.now[:notice] = "Email and/or password invalid. Please try again."
       redirect_to login_path
     end
   end 

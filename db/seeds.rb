@@ -14,25 +14,25 @@
 # ])
 
 # Cryptid.create([ 
-#     {name: "Bigfoot", description: "Bigfoot, also commonly referred to as Sasquatch, 
+#     {name: "Bigfoot", user_id: "1", description: "Bigfoot, also commonly referred to as Sasquatch, 
 #     in Canadian and American folklore, is an ape-like creature that is purported to inhabit 
 #     the forests of North America. "}, 
-#     {name: "Chupacabra", description: "The chupacabra, (literally translated to 'goat-sucker'; 
+#     {name: "Chupacabra", user_id: "1", description: "The chupacabra, (literally translated to 'goat-sucker'; 
 #     from Spanish: chupar, 'to suck', and cabras, 'goats') is a legendary creature in the 
 #     folklore of parts of the Americas, with its first purported sightings reported in 
 #     Puerto Rico in 1995."}, 
-#     {name: "Mothman", description: "A legendary creature, regarded as a cryptid or alien, 
+#     {name: "Mothman", user_id: "1", description: "A legendary creature, regarded as a cryptid or alien, 
 #     reportedly seen in West Virginia in the mid-1960s. Described as a large bat-like man 
 #     with glowing red eyes."},
-#     {name: "Loch Ness", description: "The Loch Ness Monster, or Nessie, is a creature in 
+#     {name: "Loch Ness", user_id: "1", description: "The Loch Ness Monster, or Nessie, is a creature in 
 #     Scottish folklore that is said to inhabit Loch Ness in the Scottish Highlands. 
 #     It is often described as large, long-necked, and with one or more humps protruding 
 #     from the water. "}, 
-#     {name: "Ogopogo", description: "In Canadian folklore, the Ogopogo is a lake monster 
+#     {name: "Ogopogo", user_id: "1", description: "In Canadian folklore, the Ogopogo is a lake monster 
 #     said to inhabit Okanagan Lake in British Columbia, Canada. Some scholars have charted 
 #     the entity's development from First Nations folklore and widespread water monster folklore 
 #     motifs. "}, 
-#     {name: "UFO's", description: "An unidentified flying object is any aerial phenomenon that 
+#     {name: "UFO's", user_id: "1", description: "An unidentified flying object is any aerial phenomenon that 
 #     cannot immediately be identified or explained. Most UFOs are identified or investigated as
 #     conventional objects or phenomena. The term is widely used for claimed observations of 
 #     extraterrestrial spacecraft. "}, 

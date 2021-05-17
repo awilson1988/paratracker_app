@@ -2,14 +2,17 @@
 
 <% if @sightings.length == 0 %> 
   No sightings to report 
-<% else %> 
+<% else %>
+<ul> 
 <% @sightings.each do |s| %> 
 <p>
    Date: <%= s.date %><br><br> 
    Location: <%= s.location %><br><br> 
    Cryptid: <%= s.cryptid.name %><br><br>  
    Account: <%= s.account %>
+   <br>_______________________
 </p>
+</ul>
   <% end %>
 <% end %>
 

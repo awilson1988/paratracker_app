@@ -28,7 +28,9 @@ class UsersController < ApplicationController
   def show
     @user = User.find_by_id(params[:id])
     @cryptid = Cryptid.find_by(params[:user_id])
-  end
+    @sighting = Sighting.find_by(params[:sighting_id])
+   
+   end
 
   def edit
     redirect_if_not_logged_in

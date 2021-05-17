@@ -22,7 +22,12 @@ class CryptidsController < ApplicationController
   end
 
   def edit
+    redirect_if_not_logged_in
+    if @user == current_user
     @cryptid = Cryptid.find_by_id(params[:id])
+    else
+    redirect_to user_path(current_user)
+    end
   end
 
   def update

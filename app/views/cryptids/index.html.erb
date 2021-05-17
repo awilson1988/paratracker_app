@@ -3,7 +3,7 @@
 
 <% @cryptids.each do |c| %><br><br> 
     
-       Name: <%= c.name %><br><br> 
+       Name: <%= link_to(c.name, cryptid_path(c), method: :get) %><br><br> 
        
      <% c.sightings.each do |sighting| %> 
          <li><%= link_to(sighting.date, sighting_path(sighting), method: :get) %> - <%= sighting.location %></li> 

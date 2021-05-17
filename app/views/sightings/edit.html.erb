@@ -2,4 +2,20 @@
 <p>Find me in app/views/sightings/edit.html.erb</p>
 
 
-<%= render 'form' %>
+<%= form_with model: @sighting do |s| %> 
+
+    <%= s.label :date %> 
+    <%= s.datetime_field :date %><br><br> 
+    
+    <%= s.label :location %> 
+    <%= s.text_field :location %><br><br>
+  
+    <%= s.label :account %> 
+    <%= s.text_field :account %><br><br>
+     
+    Please select which Creature you think you saw.<br><br>
+    <%= s.collection_select(:cryptid_id, Cryptid.all, :id, :name, prompt: true) %> 
+        <%= s.fields_for :cryptid do |c| %><br><br> 
+        <% end %>
+    <%= s.submit %>
+    <%end%>

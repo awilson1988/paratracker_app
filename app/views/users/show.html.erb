@@ -1,11 +1,14 @@
 
 <h1>Hello Again, <%= @user.first_name %>!</h1><br> 
 
-
-<h2>Your Cryptid's</h2>
+<h2>Your Sightings:</h2> 
+<% @user.sightings.each do |u| %><br><br> 
+     <%= link_to u.date, sighting_path(u), method: :get %><br><br>
+     <% end %>
+<h2>Your Cryptid's:</h2>
 <% @user.cryptids.each do |c| %><br><br> 
     
-     <%= link_to(c.name, cryptid_path(c), method: :get) %><br><br> 
+     <%= link_to c.name, cryptid_path(c), method: :get %><br><br> 
 <% end %>
 
 
