@@ -14,9 +14,10 @@ module ApplicationHelper
         end
     end 
 
-    def sighting_owner?(sighting) 
-        if current_user != sighting.user 
-            flash[:error] = "Sorry, that sighting doesn't belong to you!" 
-        end 
+    def redirect_if_not_authorized_to_edit(user)
+        if !authorized_to_edit?(user)
+            flash[:message] = "You are not authorized to edit that"
+            redirect_to user_path(current_user)
+        end
     end
 end

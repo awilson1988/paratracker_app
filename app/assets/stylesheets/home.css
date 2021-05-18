@@ -1,6 +1,6 @@
 
 body {
-	background-color: #F3EBF6;
+	background-color: rgb(105, 172, 105);
 	font-family: 'Blippo', fantasy;
 	text-align:center;
 }
@@ -17,7 +17,7 @@ body {
 .sign {
 	padding-top: 40px;
 	color: #8C55AA;
-	font-family: 'Ubuntu', sans-serif;
+	font-family: 'Blippo', fantasy;
 	font-weight: bold;
 	font-size: 23px;
 }
@@ -39,7 +39,7 @@ margin-bottom: 50px;
 margin-left: 46px;
 text-align: center;
 margin-bottom: 27px;
-font-family: 'Ubuntu', sans-serif;
+font-family: 'Blippo', fantasy;
 }
 
 form.form1 {
@@ -63,7 +63,7 @@ margin-bottom: 50px;
 margin-left: 46px;
 text-align: center;
 margin-bottom: 27px;
-font-family: 'Ubuntu', sans-serif;
+font-family: 'Blippo', fantasy;
 }
 
 
@@ -82,7 +82,7 @@ font-family: 'Ubuntu', sans-serif;
 	padding-right: 40px;
 	padding-bottom: 10px;
 	padding-top: 10px;
-	font-family: 'Ubuntu', sans-serif;
+	font-family: 'Blippo', fantasy;
 	margin-left: 35%;
 	font-size: 13px;
 	box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
@@ -96,7 +96,7 @@ font-family: 'Ubuntu', sans-serif;
 
 a {
 	text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
-	color: green;
+	color: rgb(255, 230, 8);
 	text-decoration: none
 }
 

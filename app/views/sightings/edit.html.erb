@@ -1,8 +1,6 @@
-<h1>Sightings#edit</h1>
-<p>Find me in app/views/sightings/edit.html.erb</p>
+<h1>Edit Your Sighting Here</h1>
 
-
-<%= form_with model: @sighting do |s| %> 
+<%= form_for (@sighting) do |s| %> 
 
     <%= s.label :date %> 
     <%= s.datetime_field :date %><br><br> 

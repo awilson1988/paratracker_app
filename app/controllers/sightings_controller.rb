@@ -1,5 +1,8 @@
 class SightingsController < ApplicationController
-  before_action :set_sighting, except: [:index, :new, :create, :show, :edit] #[:new, :show, :edit, :update, :destroy]
+  include ApplicationHelper
+  before_action :set_sighting
+  before_action :can_edit?, only: [:edit, :update, :destroy]
+  # , except: [:index, :new, :create, :show, :edit] #[:new, :show, :edit, :update, :destroy]
   
   def index #path: sightings_path
     if params[:user_id] && @user = User.find_by(id: params[:user_id])
@@ -59,14 +62,10 @@ class SightingsController < ApplicationController
    end
 
   def edit
-    # redirect_if_not_logged_in
-    # if @user == current_user
-    #   render :edit
-    # else 
-    #   redirect_to user_path(current_user)
-    # end 
-  
+    
+    
   end
+  
 
   def update
     @sighting = Sighting.find_by_id(params[:id]) 
@@ -86,7 +85,13 @@ class SightingsController < ApplicationController
     redirect_to sightings_path
   end
 
-  private 
+  private
+  
+  def can_edit?
+    if !(@sighting.user == current_user)
+      redirect_to sightings_path, alert: "You cannot edit a cocktail you didn't create"
+    end
+  end
 
   def set_sighting 
     @sighting = Sighting.find_by_id(params[:id])

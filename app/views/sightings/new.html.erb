@@ -1,6 +1,15 @@
+<% if @sighting.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@sighting.errors.count, "error") %> prohibited this article from being saved:</h2>
+
+    <ul>
+      <% @sighting.errors.each do |error| %>
+        <li><%= error.full_message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
 <h1>Sightings</h1>
-
-
 <h1>Report a Sighting</h1>
 <%= render 'form' %>
 

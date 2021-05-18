@@ -1,3 +1,14 @@
+<% if @cryptid.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@cryptid.errors.count, "error") %> prohibited this article from being saved:</h2>
+
+    <ul>
+      <% @cryptid.errors.each do |error| %>
+        <li><%= error.full_message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
 <h2>Have you seen something unexplainable? Tell us know about it!</h2> 
 
 <%= form_with model: @cryptid do |c| %> 
