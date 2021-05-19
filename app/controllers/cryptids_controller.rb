@@ -1,4 +1,7 @@
 class CryptidsController < ApplicationController
+  # before_action :can_edit?, only: [:edit, :update, :destroy]
+  before_action :set_cryptid
+  
   def index
     @cryptids = Cryptid.cryps_sightings
   end
@@ -18,7 +21,6 @@ class CryptidsController < ApplicationController
   end
 
   def show
-    @cryptid = Cryptid.find_by_id(params[:id])
   end
 
   def edit
@@ -31,7 +33,6 @@ class CryptidsController < ApplicationController
   end
 
   def update
-    @cryptid = Cryptid.find_by_id(params[:id]) 
     @cryptid.update(cryptid_params)
     if @cryptid.valid?
       redirect_to cryptid_path(@cryptid), notice: "Cryptid Updated!"
@@ -42,12 +43,21 @@ class CryptidsController < ApplicationController
   end
 
   def destroy
-    @cryptid = Cryptid.find_by_id(params[:id]) 
     @cryptid.destroy
     redirect_to cryptids_path
   end
 
-  private
+  private 
+
+  def set_cryptid 
+    @cryptid = Cryptid.find_by_id(params[:id])
+  end
+
+  # def can_edit?
+  #   if !(@cryptid.user == current_user)
+  #     redirect_to sightings_path, alert: "You cannot edit a Cryptid you didn't create"
+  #   end
+  # end
 
   def cryptid_params 
     params.require(:cryptid).permit(:name, :description, :cryptid_id, :cryptids, :user_id)
