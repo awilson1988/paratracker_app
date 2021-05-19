@@ -1,5 +1,4 @@
-class ApplicationController < ActionController::Base 
-    add_flash_types :success, :error, :warning, :info   
+class ApplicationController < ActionController::Base  
     include ApplicationHelper 
     
     def current_user
