@@ -20,6 +20,14 @@ class CryptidsController < ApplicationController
     end
   end
 
+  # def add_squonk 
+  #    @cryptid = Cryptid.new(name: 'Squonk', description: 'Sounds cute!', user_id: current_user.id )
+  #   @cryptid.save 
+
+
+
+  # end
+
   def show
   end
 

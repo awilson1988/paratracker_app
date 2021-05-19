@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create' 
   post '/logout', to: 'sessions#destroy'
   get '/auth/:provider/callback', to: 'sessions#omniauth'
+  get '/add_squonk', to: 'cryptids#create'
   resources :cryptids
   resources :sightings
   resources :users do 
