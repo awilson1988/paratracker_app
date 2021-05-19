@@ -1,8 +1,8 @@
 class SightingsController < ApplicationController
   include ApplicationHelper
-   before_action :find_user
-   before_action :set_sighting
-  before_action :can_edit?, only: [:edit, :update, :destroy]
+  before_action :find_user
+  before_action :set_sighting
+  # before_action :can_edit?, only: [:edit, :update, :destroy]
   # , except: [:index, :new, :create, :show, :edit] #[:new, :show, :edit, :update, :destroy]
   
   def index #path: sightings_path
@@ -49,15 +49,14 @@ class SightingsController < ApplicationController
   end
 
   def show
-      if params[:user_id] # this is checking if this a nested route
-       @user = User.find_by_id(params[:user_id])
-       @sighting = Sighting.find_by_id(params[:id])
-        # redirect_to user_sighting_path(@user, @sighting)
+     if params[:user_id] # this is checking if this a nested route
+      @user = User.find_by(id: params[:user_id])
+      @sighting = Sighting.find_by(params[:id])
+      # redirect_to user_sighting_path(@user, @sighting)
      else #not in the nested route
-       @sighting = Sighting.find_by_id(params[:id])
+      @sighting = Sighting.find_by(params[:id])
      end
-  
-  end
+ end
 
   def edit
   end
@@ -87,11 +86,11 @@ class SightingsController < ApplicationController
     @user = User.find_by_id(params[:id]) 
   end
   
-  def can_edit?
-    # if !(@sighting.user == current_user)
-    #   redirect_to sightings_path, alert: "You cannot edit a sighting you didn't create"
-    # end
-  end
+  # def can_edit?
+  #   # if !(@sighting.user == current_user)
+  #   #   redirect_to sightings_path, alert: "You cannot edit a sighting you didn't create"
+  #   # end
+  # end
 
   def set_sighting 
     @sighting = Sighting.find_by_id(params[:id])

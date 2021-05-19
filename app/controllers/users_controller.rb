@@ -26,8 +26,9 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user = User.find_by_id(params[:id])
     @cryptid = Cryptid.find_by(params[:user_id])
-    @sighting = Sighting.find_by(params[:sighting_id])
+    @sighting = Sighting.find_by_id(params[:id])
    end
 
   def edit
