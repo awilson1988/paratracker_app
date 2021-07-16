@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_14_222651) do
+ActiveRecord::Schema.define(version: 2021_07_14_231203) do
+
+  create_table "comments", force: :cascade do |t|
+    t.string "name"
+    t.text "body"
+    t.integer "post_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["post_id"], name: "index_comments_on_post_id"
+  end
 
   create_table "cryptids", force: :cascade do |t|
     t.string "name"
@@ -44,5 +53,6 @@ ActiveRecord::Schema.define(version: 2021_05_14_222651) do
     t.string "provider"
   end
 
+  add_foreign_key "comments", "posts"
   add_foreign_key "sightings", "users"
 end

@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   get '/auth/:provider/callback', to: 'sessions#omniauth'
   #get '/add_squonk', to: 'cryptids#create'
   resources :cryptids
-  resources :sightings
+  resources :sightings do 
+    resources :comments
+  end
   resources :users do 
     resources :sightings, only: [:index, :new, :create, :show]
   end

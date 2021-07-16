@@ -4,6 +4,12 @@ Location: <%= @sighting.location %><br><br>
 Cryptid: <%= @sighting.cryptid.name %><br><br>  
 Account: <%= @sighting.account %>
 
+<br>  
+<h2> <%= @sighting.comments.count %> Comments</h2> 
+    <%= render @sighting.comments %> 
+    <h3>Add a Comment: </h3>
+    <%= render 'comments/form' %>
+<br>
 
 <%= button_to('Edit Sighting', edit_sighting_path(@sighting), method: :get) %>  
 <%= button_to('Delete this Sighting', sighting_path(@sighting), method: :delete) %>  
