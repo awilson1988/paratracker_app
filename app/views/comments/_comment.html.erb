@@ -1,2 +1,5 @@
-<%= comment.name %>:<br> 
-<%= comment.body %> 
+<p><%= comment.name %>:<br></p> 
+<p><%= comment.body %></p> 
+<p><%= time_ago_in_words(comment.created_at) %> ago</p>
+
+<p><%= button_to('Delete your Comment', [comment.sighting,comment], method: :delete) %></p>
