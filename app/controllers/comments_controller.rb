@@ -32,7 +32,7 @@ class CommentsController < ApplicationController
         @sighting = Sighting.find(params[:sighting_id])
         @comment = @sighting.comments.find(params[:id])
         if !(@comment.user_id == session[:user_id])
-          redirect_to sighting_path(@sighting), alert: "You cannot edit a comment you didn't create"
+          redirect_to user_path(current_user), alert: "You cannot edit a comment you didn't create"
         end
     end
 end
